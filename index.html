@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I'm Sorry</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      font-family: 'Open Sans', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      overflow: hidden;
+    }
+
+    /* Floating hearts animation */
+    body::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url('https://cdn-icons-png.flaticon.com/512/833/833472.png') repeat;
+      background-size: 40px;
+      opacity: 0.1;
+      animation: float 15s linear infinite;
+    }
+    @keyframes float {
+      from { background-position: 0 0; }
+      to { background-position: 0 -1000px; }
+    }
+
+    .page {
+      text-align: center;
+      display: none;
+      animation: fadeIn 1s ease-in-out;
+    }
+    .page.active {
+      display: block;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3em;
+      color: #e63946;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #444;
+      margin: 12px 0;
+      line-height: 1.6;
+    }
+
+    button {
+      background: #ff6b81;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 30px;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    button:hover {
+      background: #ff4757;
+      transform: scale(1.05);
+    }
+
+    .signature {
+      margin-top: 25px;
+      font-style: italic;
+      color: #555;
+      font-size: 17px;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+  </style>
+</head>
+<body>
+  <!-- Background Music -->
+  <audio autoplay loop hidden>
+    <source src="https://docs.google.com/uc?export=download&id=1iqty4UIu2Sk4798KSplC64Kq-cPpEOCx
+" type="audio/mpeg">
+  </audio>
+
+  <!-- Page 1 -->
+  <div id="page1" class="page active">
+    <h1 style="font-family: 'Dancing Script', cursive;">I'm Sorry ❤️</h1>
+    <button onclick="showPage2()">Open My Heart 💌</button>
+  </div>
+
+  <!-- Page 2 -->
+  <div id="page2" class="page">
+    <div class="card">
+      <h1>Forgive Me 🙏</h1>
+      <p>Dear [Divyanshi],</p>
+      <p>
+        I want to start by saying that I am deeply sorry for what happened.  
+        I realize now that my words and actions may have hurt you, and that was never my intention.  
+        You are someone who means a lot to me, and knowing that I caused you pain breaks my heart.  
+      </p>
+      <p>
+        Please know, [Divyanshi], that you are very special to me.  
+        Your smile makes everything brighter, and I hate that my thoughtless words  
+        took that away even for a moment. From my heart, I promise to choose my  
+        words more carefully, and to always stand by you with love and care.  
+      </p>
+      <p class="signature">With all my sincerity,<br>Siddhu</p>
+      <p style="color:#e63946; font-weight:bold; margin-top:15px;">I’m really sorry 💖 Please smile again for me 🌸</p>
+    </div>
+  </div>
+
+  <script>
+    function showPage2() {
+      document.getElementById("page1").classList.remove("active");
+      document.getElementById("page2").classList.add("active");
+    }
+  </script>
+</body>
+</html>
