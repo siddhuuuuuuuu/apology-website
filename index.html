@@ -11,15 +11,18 @@
 
     /* -------- PAGES -------- */
     .page {
-      display: flex;
+      display: none; /* hidden by default */
       justify-content: center;
       align-items: center;
       flex-direction: column;
       text-align: center;
-      position: relative; /* not absolute */
       width: 100vw;
       height: 100vh;
       overflow: hidden;
+      position: relative;
+    }
+    .page.active {
+      display: flex; /* show instantly */
     }
 
     /* Floating animation */
@@ -39,7 +42,6 @@
       background: linear-gradient(135deg, #fceabb, #f8b500, #ff6f91, #a18cd1, #fbc2eb);
       background-size: 400% 400%;
       animation: gradient 15s ease infinite;
-      z-index: 2;
     }
     @keyframes gradient {
       0% {background-position: 0% 50%;}
@@ -95,7 +97,6 @@
       background-size: 400% 400%;
       animation: gradient 18s ease infinite;
       padding: 20px;
-      z-index: 1; /* behind page1 initially */
     }
 
     /* Letter styling */
@@ -108,12 +109,7 @@
       text-align: left;
       position: relative;
       overflow: hidden;
-      opacity: 0;
-      transition: opacity 1s ease;
-    }
-
-    .page2.active .letter {
-      opacity: 1; /* fade in the letter */
+      opacity: 1; /* always visible */
     }
 
     .letter::before {
@@ -163,7 +159,7 @@
 <body>
 
   <!-- PAGE 1 -->
-  <div class="page page1">
+  <div class="page page1 active">
     <h1>Sorry... 🌸</h1>
     <p>Friendship is too precious to lose. Please accept my apology 💕</p>
     <button onclick="goToPage2()">From Siddhu to Divyanshii</button>
@@ -205,8 +201,8 @@
     }
 
     function goToPage2(){
-      document.querySelector(".page1").style.display = "none"; // hide page1 instantly
-      document.querySelector(".page2").classList.add("active"); // fade in letter
+      document.querySelector(".page1").classList.remove("active"); // hide instantly
+      document.querySelector(".page2").classList.add("active"); // show instantly
       document.getElementById("bgSong").play();
     }
   </script>
