@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apology Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; overflow: hidden; }
+
+    .page {
+      display: flex;
+      opacity: 0;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      height: 100vh;
+      width: 100vw;
+      transition: opacity 1s ease;
+    }
+    .active { opacity: 1; }
+
+    /* Floating animation */
+    .float {
+      position: absolute;
+      font-size: 2rem;
+      opacity: 0.8;
+      animation: float 8s linear infinite;
+    }
+    @keyframes float {
+      from { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+      to { transform: translateY(-10vh) rotate(360deg); opacity: 1; }
+    }
+
+    /* -------- PAGE 1 -------- */
+    .page1 {
+      background: linear-gradient(135deg, #fceabb, #f8b500, #ff6f91, #a18cd1, #fbc2eb);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+    }
+    @keyframes gradient {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    .page1 h1 {
+      font-size: 4rem;
+      color: #fff;
+      font-family: 'Dancing Script', cursive;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .page1 p {
+      font-size: 1.2rem;
+      color: #fff;
+      margin-bottom: 25px;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+    }
+
+    .page1 button {
+      position: relative;
+      padding: 14px 34px;
+      font-size: 1.3rem;
+      border: none;
+      border-radius: 40px;
+      background: linear-gradient(45deg, #ff4b5c, #ff6f91);
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: bold;
+      box-shadow: 0 0 20px rgba(255,0,120,0.5);
+      overflow: hidden;
+    }
+    .page1 button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(255,0,120,0.8);
+    }
+    .page1 button:hover::after {
+      content: "💖";
+      position: absolute;
+      font-size: 1.5rem;
+      animation: float 2s linear infinite;
+      top: -10px;
+      right: 10px;
+    }
+
+    /* -------- PAGE 2 -------- */
+    .page2 {
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7, #ffd1ff);
+      background-size: 400% 400%;
+      animation: gradient 18s ease infinite;
+      padding: 20px;
+    }
+
+    .letter {
+      background: url('https://i.ibb.co/7vYF0RK/paper-texture.jpg') no-repeat center/cover;
+      padding: 40px;
+      border-radius: 20px;
+      max-width: 700px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3), 0 0 20px rgba(255,100,150,0.4);
+      text-align: left;
+      animation: fadeIn 1.5s ease-in-out;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .letter::before {
+      content: "💖";
+      position: absolute;
+      font-size: 2.5rem;
+      top: -10px;
+      right: -10px;
+      animation: float 6s linear infinite;
+      opacity: 0.5;
+    }
+
+    .letter h2 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2.2rem;
+      color: #ff4b5c;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .letter p {
+      font-size: 1.15rem;
+      color: #333;
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+
+    .letter strong {
+      color: #ff4b5c;
+    }
+
+    .closing {
+      margin-top: 15px;
+      text-align: center;
+      font-size: 1.2rem;
+      color: #ff4081;
+      font-weight: bold;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #ff80ab; }
+      to { text-shadow: 0 0 20px #ff4081; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PAGE 1 -->
+  <div class="page page1 active">
+    <h1>Sorry... 🌸</h1>
+    <p>Friendship is too precious to lose. Please accept my apology 💕</p>
+    <button onclick="goToPage2()">From Siddhu to Divyanshii</button>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="page page2">
+    <div class="letter">
+      <h2>My Apology 💌</h2>
+      <p>I’m really sorry for what I said earlier. I didn’t mean to hurt you, and it breaks my heart knowing I made you feel sad. You mean so much to me, and I wish I could take my words back.</p>
+      <p>I just want you to know that I believe in you, always. Even when things feel tough, I know you’re capable of amazing things. I’m sorry for bringing any negativity into your day—I never want to do that.</p>
+      <p>Please forgive me for this moment. I care about you a lot, and I hope I can always be someone who makes you feel supported and loved, not discouraged.</p>
+      <div class="closing">✨ Friends Forever ✨</div>
+    </div>
+  </div>
+
+  <!-- FLOATING DECORATIONS -->
+  <script>
+    const page1 = document.querySelector(".page1");
+    const emojis = ["😊","🌸","💖","🤗","✨","🌷","🥰","🌈","⭐"];
+    for(let i=0;i<25;i++){
+      let span = document.createElement("span");
+      span.classList.add("float");
+      span.innerText = emojis[Math.floor(Math.random()*emojis.length)];
+      span.style.left = Math.random()*100+"vw";
+      span.style.animationDuration = (5+Math.random()*6)+"s";
+      page1.appendChild(span);
+    }
+
+    const page2 = document.querySelector(".page2");
+    const emojis2 = ["❤️","🌸","💖","🥰","✨"];
+    for(let i=0;i<25;i++){
+      let span = document.createElement("span");
+      span.classList.add("float");
+      span.innerText = emojis2[Math.floor(Math.random()*emojis2.length)];
+      span.style.left = Math.random()*100+"vw";
+      span.style.animationDuration = (6+Math.random()*5)+"s";
+      page2.appendChild(span);
+    }
+
+    function goToPage2(){
+      document.querySelector(".page1").classList.remove("active");
+      document.querySelector(".page2").classList.add("active");
+      document.getElementById("bgSong").play();
+    }
+  </script>
+
+  <!-- Background Song -->
+  <audio id="bgSong" loop>
+    <source src="mysong.mp3" type="audio/mpeg">
+  </audio>
+
+</body>
+</html>
